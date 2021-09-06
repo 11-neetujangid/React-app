@@ -1,7 +1,7 @@
 import { SET_DATA } from "../Actions/action";
 
 const initialState = {
-    data:[]
+    record: []
 }
 
 
@@ -11,9 +11,10 @@ const reducer = (state = initialState, action) => {
         case SET_DATA:
             return {
                 ...state,
-                data: action.payload,
+                record: action.payload,
             }
-
+        default:
+            return state;
     }
 }
 export default reducer;

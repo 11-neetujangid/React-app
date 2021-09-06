@@ -1,16 +1,20 @@
 import { setData } from "../Actions/action";
-import axios from 'axios'
+import axios from 'axios';
 
 
-const url = "https://shibe.online/api/shibes?count=[1-100]"
+const url = "http://shibe.online/api/shibes"
+
+
 export const getData = () => async (dispatch, getState) => {
-   
+    console.log("helo here")
     try {
-        const response = await axios.get(`${url}`);
+        // console.log("helo here")
+        const response = await axios.get(`${url}?count=10`);
         console.log(response.data)
         dispatch(setData(response.data));
 
     } catch (err) {
+        console.log("Errror")
         console.log(err);
     }
 }
