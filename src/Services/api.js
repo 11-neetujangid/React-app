@@ -44,7 +44,7 @@ export const getByName = (name) => async (dispatch, getState) => {
 export const urlfilter = () => async (dispatch, getState) => {
     console.log(`${url}/shibes?count=10&urls`)
     try {
-        const response = await axios.get(`${url}/shibes?count=10&urls=false`);
+        const response = await axios.get(`${url}/shibes?&urls`);
         console.log(response.data)
         dispatch(filterData(response.data));
     } catch (error) {
